@@ -7,7 +7,7 @@ class BarangController extends BaseController {
 
 	public function getDataBarang()
 	{
-		$data['active_page'] = 'barang';
+		$data['active_page'] = 'data barang';
 		$data['menu'] = $this->getMenu();
 		$data['title'] 		 = 'Data Barang';
 		$data['barang']		 = 	DB::table('tbl_barang')
@@ -19,7 +19,8 @@ class BarangController extends BaseController {
 
 	public function getAddBarang()
 	{
-		$data['active_page'] = 'barang';
+		$data['active_page'] = 'data barang';
+		$data['menu'] = $this->getMenu();
 		$data['title'] 		 = 'Data Barang';
 		return View::make('user/barang-input', $data);
 	}

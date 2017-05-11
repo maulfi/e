@@ -59,7 +59,7 @@
                                                 </li>
                                             </ul>
                                     @endif
-                                <li class=" @if($m->is_have_child) xn-openable @endif @if($active_page=='overview') active @endif">                                        
+                                <li class=" @if($m->is_have_child) xn-openable @endif @if(strtolower($active_page)==strtolower($m->module_name)) active @endif">                                        
                                         <?php $sub_parent_id = 0; ?>
                                         <?php $sub_child = 0; ?>
                                         <a href="@if($m->is_have_child) javascript:void(0) <?php $sub_parent_id = $m->module_id; ?> @else {{ url($m->module_controllers.'/'.strtolower(str_replace(' ','-',$m->module_name))) }} @endif"><span class="fa {{$m->icon}}"></span> @if($m->is_have_child)<span class="xn-text">@endif {{$m->module_name}}@if($m->is_have_child)</span>@endif</a>                                    
