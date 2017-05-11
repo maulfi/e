@@ -1,0 +1,26 @@
+$(document).ready(function() {  
+    $("#accordion").navgoco({accordion: true});
+    $(".chosen-select").chosen();
+});
+
+jQuery(function(){
+ jQuery('#date_timepicker_start').datetimepicker({
+  format:'d/m/Y',
+  onShow:function( ct ){
+   this.setOptions({
+    maxDate:jQuery('#date_timepicker_end').val()?jQuery('#date_timepicker_end').val():false
+   })
+  },
+  timepicker:false
+ });
+ jQuery('#date_timepicker_end').datetimepicker({
+  format:'d/m/Y',
+  onShow:function( ct ){
+   this.setOptions({
+    minDate:jQuery('#date_timepicker_start').val()?jQuery('#date_timepicker_start').val():false
+   })
+  },
+  timepicker:false
+ });
+});
+

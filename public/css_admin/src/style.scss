@@ -1,0 +1,411 @@
+@import "compass/css3", "susy";
+@import "includes/normalize", "includes/mixin", "includes/grid";
+
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+@import "includes/alun2";
+
+
+/* ==========================================================================
+   Weekendinc's custom styles
+   ========================================================================== */
+
+.page {
+  @include container($total-columns);
+}
+
+.wlogin {
+  margin: 100px 0;
+}
+
+.wpage {
+  @include background-image(linear-gradient(left, $bg-side, $bg-side 15.25424% , $white 15.25424%, $white 83.05085%, $white 100%));
+}
+
+.pagenav {  
+  @include span-columns(2,12);
+  background: $bg-side;
+  h1 {
+    text-align: center;
+    background-color: $bg-logo;
+    margin: 0;
+    font-size: 1.5em;
+    a {
+      color: $white;
+      display: block;
+      padding: 30px 0;
+
+      &:hover {
+        background-color: lighten($bg-logo,5%);
+      }
+    }
+    sup {
+      font-size: 0.6em;
+      position: relative;
+      margin-left: -5px;
+    }
+  }
+
+  > ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    color: $side-notyet;
+    font-size: 1em; 
+  }
+
+  ul ul {
+    color: $white;
+    padding: 0;
+    margin: 0;
+  }
+
+  li li {
+    font-size: 0.9em;
+
+    a {
+
+      padding: 5px 0.8em 5px 1.6em;
+
+    }
+  }
+
+  a {
+    padding: 10px 0.5em;
+    display: block;
+    color: $white;
+
+    &:hover {
+      background-color: lighten($bg-side, 5%);
+    }
+  }
+
+  li.active {
+    > a {
+      background-color: $bg-global;
+      color: $side-active;
+    }
+    .submenu {
+      // display: block !important;
+    }
+  }
+
+  .notyet {
+    padding: 5px 0.8em 5px 1.6em;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+
+  .submenu {
+    display: none;
+    background: darken($bg-side,3%);
+    border-top: 1px solid darken($bg-side,5%);
+    border-bottom: 1px solid darken($bg-side,5%);
+  }
+}
+
+.main {
+  @include span-columns(10 omega, 12);
+  padding-right: 1em;
+  @include box-sizing(border-box);
+}
+
+.footer {
+  background-color: $bg-footer;
+  color: $white;
+  p {
+    padding: 1em;
+    margin: 0;
+    font-size: 0.75em;
+  }
+}
+
+.p-right {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.gallery-preview {
+
+  .action {
+    border-bottom: 2px solid #bbbdbf;
+
+    h2 {
+      float: left;
+    }
+    button {
+      margin-top: 20px;
+      float: right;
+    }
+    
+  }
+
+  td {
+    text-align: center;
+    img {
+      max-width: 200px;
+    }
+  }
+}
+
+.alun-tabs {
+  ul {
+    list-style: none;
+    margin: 30px 0 0;
+    padding: 0;
+    border-bottom: 1px solid #bbbdbf;
+  }
+  li {
+    @include inline-block;
+  }
+  a {
+    @include border-radius(5px 5px 0 0);
+    @include inline-block;
+    @include transition(0.1s linear all);
+    border: 1px solid $button-border;
+    border-bottom: 0 none;
+    background-color: $button-bg;
+    color: $button-color;
+    padding: .4em 1.3em;
+    // padding: 5px 1.3em;
+    margin: 0;
+    line-height: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    &:hover {
+      // background-color: $button-bg-hover;
+      color: $button-color;
+      background-color: lighten($button-bg,5%);
+    }
+
+    &:active {
+      // background-color: $button-bg-active;
+      color: $button-color;
+      background-color: darken($button-bg,5%);
+      @include box-shadow(0 1px 2px $black03 inset);
+    }
+  }
+  li.active {
+    a {
+      background-color: $button-blue;
+      color: $white;
+      border: 1px solid darken($button-blue,10%);
+
+      &:hover {
+        background-color: lighten($button-blue,5%);
+      }
+      &:active {
+        background-color: darken($button-blue,5%);
+      }
+    }
+  }
+}
+
+thead {
+  .text_filter, .date_range_filter {
+    width: 100px;
+  }
+}
+
+.waction {
+  .alun-form {
+    float: left;
+    width: 50%;
+    margin: 0;
+  }
+  select {
+    width: auto;
+  }
+  .form-group {
+    @include inline-block;
+  }
+  .export {
+    float: right;
+    width: 50%;
+    padding: 15px 0 0;
+    text-align: right;
+  }
+}
+
+.align-form {
+  label {
+    font-weight: 600;
+  }
+  .inline-group {
+    label {
+      width: auto;
+    }
+  }
+}
+
+
+.chart-line {
+  margin-bottom: 30px;
+}
+
+.dataTables_info {
+  width: 45% !important;
+  float: left !important;
+}
+
+.dataTables_wrapper {
+  margin: 20px 0;
+}
+
+.mini {
+  margin: 20px 0;
+  background: #f0f0f0;
+  .block {
+    @include inline-block;
+    margin-left: -3px;
+    border-right: 1px solid white;
+    // border-top: 1px solid #bbbdbf;
+    padding: 10px 20px;
+    &:last-child {
+      border-right: 0 none;
+    }
+  }
+  strong {
+    font-size: 1.2em;
+  }
+  .progress strong {
+    color: #9528b4;
+  }
+  .timeline strong {
+    color: #391995;
+  }
+  .entourage strong {
+    color: #ff0000;
+  }
+  .engagement strong {
+    color: #00a76b;
+  }
+}
+
+.chart {
+  margin: 20px 0; 
+  table {
+    margin-top: 20px;
+  }
+}
+
+.title {
+  h3 {
+    float: left;
+    margin: 10px 0;
+  }
+  .action {
+    float: right;
+    margin: 10px 0;
+  }
+  input[type=text] {
+    width: 100px;
+  }
+  select {
+
+  }
+}
+
+
+
+
+@import "includes/plugins", "includes/media", "includes/helper", "includes/print";

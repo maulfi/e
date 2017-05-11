@@ -1,0 +1,200 @@
+@import "bootstrap-compass";
+@import "bootstrap";
+
+
+/* ==========================================================================
+   Weekendinc's custom styles
+   ========================================================================== */
+
+body,html {
+	height: 100%;
+	background: #2d619c url(../images/note.png)no-repeat 15% bottom;
+}
+
+.source-sans {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.font-white {
+	color: #ffffff;
+}
+
+.font-grey {
+	color: #767676;
+}
+
+.absolute-center {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+}
+
+.background-white {
+	background: #ffffff;
+}
+
+.background-grey {
+	background:#f5f5f5;
+}
+
+.background-grey-young {
+	background: #fdfcfc;
+}
+
+.border-grey-young {
+	border: 1px solid #e9e9e9;
+}
+
+.font-60 {
+	font-size: 60px;
+}
+
+.height-custom {
+	height: 100%;
+}
+
+.height-auto {
+	height: auto;
+}
+
+.background-green-dark {
+	background: #64c196;
+	&:hover {
+		background: lighten(#64c196, 10%);
+	}
+}
+
+.background-green {
+	background: #6ed2a4;
+}
+
+.font-green {
+	color: #79e7b5;
+}
+
+.font-blue {
+	color: #0e3a6c;
+}
+
+.border-grey-white {
+	border-color: #e9e9e9;
+}
+
+.selected {
+	.input-group-addon {
+		border:3px solid #7cc4ad;
+		border-right: 1px solid #e9e9e9;
+	}
+
+	.form-control {
+		border:3px solid #7cc4ad;
+		border-left: 1px solid #e9e9e9;
+	}
+	
+	.none-first {
+		display: block;
+	}
+}
+
+.padding-right-30 {
+	padding-right: 30px;
+}
+
+.none-first {
+	display: none;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.choose-opt {
+	width: 50%;
+}
+
+.padding-12 {
+	padding: 12px;
+}
+
+.choose-opt-longer {
+	width: 250px;
+}
+
+.height-auto {
+	height: auto;
+}
+
+.bottom-absolute {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.padding-big {
+	padding: 40px;
+}
+
+.border-bottom-blue {
+	border-bottom: 1px solid #205188;
+}
+
+.padding-bottom-10 {
+	padding-bottom: 10px;
+}
+
+.left-box {
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.color-tw {
+	color: #55acee;
+}
+
+.selected-picture {
+	box-shadow: inset 0px 0px 0px 3px #6ed2a4;
+	// @include box-shadow(#6ed2a4 3px 3px 3px);
+	// border: 3px solid #6ed2a4;
+	.none-first {
+		position: absolute;
+		top: 0;
+		right:0;
+		display: block;
+	}
+}
+
+.color-fb {
+	color: #46639e;
+}
+
+.color-ig {
+	color: #bea493;
+}
+
+.color-dark-grey {
+	color: #999999;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.picture-option {
+	padding: 20px;
+	position: relative;
+}
+
+.no-pad-right {
+	padding-right: 0;
+}
+
+.no-pad-left {
+	padding-left: 0;
+}
