@@ -8,7 +8,7 @@ class ReportController extends BaseController {
 
 	public function getOverview()
 	{
-		$data['active_page'] = 'overview';
+		$data['active_page'] = 'Overview';
 		$data['menu'] = $this->getMenu();
 		$data['title'] = 'Overview';
 		$data['admin'] = DB::table('user_admin')
@@ -19,7 +19,7 @@ class ReportController extends BaseController {
 
 	public function getPerformance()
 	{
-		$data['active_page'] = 'performance';
+		$data['active_page'] = 'Performance';
 		$data['title'] = 'Performance';
 		$data['menu'] = $this->getMenu();
 		$data['admin'] = DB::table('user_admin')
