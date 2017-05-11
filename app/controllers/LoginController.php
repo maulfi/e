@@ -7,7 +7,7 @@ class LoginController extends BaseController {
 	
 	public function getLoginAdmin()
 	{
-		return View::make('admin/login_view');
+		return View::make('user/login_view');
 	}
 
 	public function postLoginAdmin()

@@ -74,24 +74,8 @@
 		});
 	//
 
-	//Admin Dashboard
-		Route::get('logout', 'LogindashboardController@getLogout');
-		Route::controller('login-dashboard', 'LogindashboardController');
-
-		Route::group(array('before' => 'session_admin_dashboard'), function(){
-			Route::controller('dashboard', 'DashboardController');
-		});
-	//
-
 	//user
-		Route::post('register/userregister', array('before' => 'csrf|input', 'uses' => 'RegisterController@postRegister'));
-		Route::get('register/userregister', 'RegisterController@getRegister');
-		Route::get('register/testing', 'RegisterController@callback_function');
-		Route::controller('register', 'RegisterController');
-
 		Route::group(array('before' => 'session'), function(){
-
-			Route::controller('question', 'QuestionController');
 
 			Route::controller('user', 'UserController');
 
@@ -102,16 +86,12 @@
 			Route::controller('message', 'MessageController');
 
 			Route::controller('transaction', 'TransactionController');
-
-			Route::controller('result', 'ResultController');
 			
 			Route::controller('home', 'HomeController');
 			Route::controller('performance', 'performance');
 
 			Route::controller('/', 'ReportController');
 		});
-
-		Route::controller('news', 'NewsuserController');
 	//
 
 ?>
