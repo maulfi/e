@@ -1,3 +1,18 @@
 Aplikasi Bisnis
 - Menu Transaction Kebawah : Fikri N M
 - Reporting : Maulfi Najir A
+
+
+git bash command:
+
+COmmit: 
+- Insert Coment for commit
+- Press Esc
+- insert :wq 
+- press enter
+
+push:
+
+
+how to ignore folder or file:
+list folder or file on .gitignore
