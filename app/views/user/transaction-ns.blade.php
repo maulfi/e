@@ -27,7 +27,7 @@
                         <h3 class="panel-title">Data Transaksi</h3>
                         <ul class="panel-controls">
                             <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
-                            <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                            <li><a href="{{url('transaction/add-not-served-transaction')}}" class=""><span class="fa fa-plus"></span></a></li>
                             <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
                         </ul>                                
                     </div>

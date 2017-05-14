@@ -25,7 +25,7 @@
                             <h3 class="panel-title">Data User Admin</h3>
                             <ul class="panel-controls">
                                 <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
-                                <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                <li><a href="{{url('user/add-user')}}" class=""><span class="fa fa-plus"></span></a></li>
                                 <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
                             </ul>                                
                         </div>
@@ -38,7 +38,8 @@
                                         <th>Full Name</th>
                                         <th>Position</th>
                                         <th>Role</th>
-                                        <th>Date</th>                                                
+                                        <th>Date</th>
+                                        <th>Action</th>                                                 
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,6 +52,7 @@
                                         <td>{{ $a->position }}</td>
                                         <td>{{ $a->role }}</td>
                                         <td>{{ $a->insertdate }}</td>
+                                        <td><a href="{{url('user/update-user')}}" class=""><span class="fa fa-edit"></span></a></td>
                                     </tr>
                                     @endforeach
                                 @endif
