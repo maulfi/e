@@ -25,15 +25,15 @@
                     </li>
                     <li class="xn-profile">
                         <a href="#" class="profile-mini">
-                            <img src="{{ asset('assets/images/users/avatar.jpg') }}" alt="John Doe"/>
+                            <img src="{{ asset('assets/images/users/'.Session::get('avatar')) }}" alt="John Doe"/>
                         </a>
                         <div class="profile">
                             <div class="profile-image">
-                                <img src="{{ asset('assets/images/users/avatar.jpg') }}" alt="John Doe"/>
+                                <img src="{{ asset('assets/images/users/'.Session::get('avatar')) }}" alt="John Doe"/>
                             </div>
                             <div class="profile-data">
-                                <div class="profile-data-name">John Doe</div>
-                                <div class="profile-data-title">Owner</div>
+                                <div class="profile-data-name">{{Session::get('fullname')}}</div>
+                                <div class="profile-data-title">{{Session::get('position')}}</div>
                             </div>
                             <div class="profile-controls">
                                 <a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>
@@ -69,7 +69,7 @@
                                 @else
                                     @if($sub_child==0)
                                         <ul>
-                                            <li class="@if($active_page=='served') active @endif">
+                                            <li class="active @if(strtolower('Not Served Transaction')==strtolower($m->module_name)) active @endif">
                                     @endif
                                     <?php $sub_child++; ?>
                                     <a href="{{ url($m->module_controllers.'/'.strtolower(str_replace(' ','-',$m->module_name))) }}"><span class="fa {{$m->icon}}"></span> <span class="xn-text">{{$m->module_name}}</span></a>
