@@ -5,14 +5,24 @@ Aplikasi Bisnis
 
 git bash command:
 
-COmmit: 
+Commit:
+1. stage changes
+- git status
+- git add file changes (folder)
+- git commit
+
+2. comment commit
 - Insert Coment for commit
 - Press Esc
 - insert :wq 
 - press enter
 
 push:
+- git push
+- enter credential
 
+pull from master:
+- git pull url git master
 
 how to ignore folder or file:
 list folder or file on .gitignore
