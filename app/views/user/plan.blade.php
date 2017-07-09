@@ -25,7 +25,7 @@
                             <h3 class="panel-title">Monthly Plan : Agustus</h3>
                             <ul class="panel-controls">
                                 <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
-                                <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                <li><a href="{{url('report/add-plan')}}" class=""><span class="fa fa-plus"></span></a></li>
                                 <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
                             </ul>                                
                         </div>
@@ -33,39 +33,25 @@
                             <table class="table datatable">
                                 <thead>
                                     <tr>
-                                        <th>Create Date</th>
+                                        <th>ID</th>
                                         <th>What to Do</th>
-                                        <th>Priority</th>
-                                        <th>Methode</th>
-                                        <th>Feedback</th>
-                                        <td>Last Update</td>
+                                        <th>Profit</th>
+                                        <th>Start</th>
+                                        <th>End</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>2016/08/01</td>
-                                        <td>Jual Lebih Banyak Aksesoris dan Handphone.</td>
-                                        <td>9</td>
-                                        <td>Promotion</td>
-                                        <td>Achieve</td>
-                                        <td>2016/08/21</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2016/08/01</td>
-                                        <td>Jual Barang yang sering di request.</td>
-                                        <td>7</td>
-                                        <td>Prepared</td>
-                                        <td>Achieve</td>
-                                        <td>2016/08/29</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2016/08/02</td>
-                                        <td>Naikan Harga Jual Pulsa Elektrik.</td>
-                                        <td>6</td>
-                                        <td>Profit Oriented</td>
-                                        <td>Not</td>
-                                        <td>2016/08/31</td>
-                                    </tr>
+                            @if($plan)
+                                @foreach($plan as $s)
+                                <tr>
+                                    <td>{{ $s->id }}</td>
+                                    <td>{{ $s->plan_title }}</td>
+                                    <td>{{ $s->profit }}</td>
+                                    <td>{{ $s->start }}</td>
+                                    <td>{{ $s->end }}</td>
+                                </tr>
+                                @endforeach
+                            @endif
                                 </tbody>
                             </table>
                         </div>
