@@ -33,9 +33,43 @@ class ReportController extends BaseController {
 		$data['active_page'] = 'plan';
 		$data['menu'] = $this->getMenu();
 		$data['title'] = 'Plan';
-		$data['admin'] = DB::table('user_admin')
-            ->select('user_id', 'user_name', 'fullname', 'position', 'role', 'insertdate')
+		$data['plan'] = DB::table('planning')
+            ->select('id', 'plan_title', 'profit', 'start', 'end')
             ->get();		
 		return View::make('user/plan', $data);
+	}
+
+	public function getAddPlan(){
+		$data['active_page'] = 'Plan';
+		$data['menu'] = $this->getMenu();
+		$data['title'] = 'Add Plan';
+
+		return View::make('user/plan-input', $data);
+	}
+
+	public function postAddPlan()
+	{
+		$post = Input::all();
+		$rules = array(
+					'plan_title' => 'required',
+					'profit' => 'required',
+					'start' => 'required',
+					'end' => 'required'
+				 );
+		$validator = Validator::make(Input::all(), $rules);
+		if($validator->passes())
+		{
+			$data = new PlanModel;
+			$data->plan_title = $post['plan_title'];
+			$data->profit = $post['profit'];
+			$data->start = $post['start'];
+			$data->end = $post['end'];
+			$data->user_id = Session::get('user_id');
+	        $data->save();
+	        return $this->getPlan();
+		}
+		View::share('error', $validator->messages());
+		View::share('filled', $post);
+		return $this->getAddPlan();
 	}
 }

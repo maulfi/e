@@ -18,6 +18,40 @@ class TransactionController extends BaseController {
 		return View::make('user/transaction', $data);
 	}
 
+	public function getAddServedTransaction(){
+		$data['active_page'] = 'Served Transaction';
+		$data['menu'] = $this->getMenu();
+		$data['title'] = 'Add Transaction Served';
+
+		return View::make('user/transaction-input', $data);
+	}
+
+	public function postAddServedTransaction()
+	{
+		$post = Input::all();
+		$rules = array(
+					'jb' => 'required',
+					'nohp' => 'required',
+					'qty' => 'required',
+				 );
+		$validator = Validator::make(Input::all(), $rules);
+		if($validator->passes())
+		{
+			$data = new TSModel;
+			$data->jenis_barang = $post['jb'];
+			$data->no_handphone = $post['nohp'];
+			$data->qty = $post['qty'];
+			$data->createdate = date('Y-m-d H:i:s');
+			$data->status = 'Active';
+			$data->user_id = Session::get('user_id');
+	        $data->save();
+	        return $this->getServedTransaction();
+		}
+		View::share('error', $validator->messages());
+		View::share('filled', $post);
+		return $this->getAddServedTransaction();
+	}
+
 	public function getNotServedTransaction()
 	{
 		$data['active_page'] = 'Not Served Transaction';
